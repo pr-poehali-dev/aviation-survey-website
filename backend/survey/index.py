@@ -6,7 +6,7 @@ from typing import Dict, Any
 def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     '''
     Business: Save survey responses from students about aviation career
-    Args: event - dict with httpMethod, body (name, age, institution, interest, knowledge, career fields)
+    Args: event - dict with httpMethod, body (name, age, institution, interest, knowledge, career, fears, future_contribution, innovation, opinion)
           context - object with request_id attribute
     Returns: HTTP response dict with statusCode, headers, body
     '''
@@ -41,8 +41,12 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     interest = body_data.get('interest')
     knowledge = body_data.get('knowledge')
     career = body_data.get('career')
+    fears = body_data.get('fears')
+    future_contribution = body_data.get('future_contribution')
+    innovation = body_data.get('innovation')
+    opinion = body_data.get('opinion')
     
-    if not all([name, age, institution, interest, knowledge, career]):
+    if not all([name, age, institution, interest, knowledge, career, fears, future_contribution, innovation, opinion]):
         return {
             'statusCode': 400,
             'headers': {
@@ -58,8 +62,8 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     cur = conn.cursor()
     
     cur.execute(
-        "INSERT INTO survey_responses (name, age, institution, interest, knowledge, career) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id",
-        (name, int(age), institution, interest, knowledge, career)
+        "INSERT INTO survey_responses (name, age, institution, interest, knowledge, career, fears, future_contribution, innovation, opinion) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING id",
+        (name, int(age), institution, interest, knowledge, career, fears, future_contribution, innovation, opinion)
     )
     
     response_id = cur.fetchone()[0]

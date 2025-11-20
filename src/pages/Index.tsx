@@ -19,7 +19,7 @@ const Index = () => {
   };
 
   const handleSurveySubmit = async () => {
-    if (Object.keys(surveyAnswers).length < 6) {
+    if (Object.keys(surveyAnswers).length < 10) {
       toast.error('Пожалуйста, ответьте на все вопросы');
       return;
     }
@@ -79,6 +79,49 @@ const Index = () => {
         { value: 'maybe', label: 'Возможно, в будущем' },
         { value: 'unsure', label: 'Пока не уверен' },
         { value: 'no', label: 'Нет, не рассматриваю' }
+      ]
+    },
+    {
+      id: 'fears',
+      question: 'Какие страхи или сомнения у вас есть относительно этой карьеры?',
+      options: [
+        { value: 'difficulty', label: 'Сложность обучения' },
+        { value: 'competition', label: 'Высокая конкуренция' },
+        { value: 'salary', label: 'Заработная плата' },
+        { value: 'responsibility', label: 'Высокая ответственность' },
+        { value: 'no_fears', label: 'Нет сомнений' }
+      ]
+    },
+    {
+      id: 'future_contribution',
+      question: 'Как вы представляете свой вклад в развитие авиации через 5 лет?',
+      options: [
+        { value: 'engineer', label: 'Инженером на производстве' },
+        { value: 'designer', label: 'Конструктором новых проектов' },
+        { value: 'researcher', label: 'Исследователем новых технологий' },
+        { value: 'manager', label: 'Руководителем проектов' },
+        { value: 'unsure', label: 'Пока не определился' }
+      ]
+    },
+    {
+      id: 'innovation',
+      question: 'Хотели бы вы участвовать в создании принципиально новых летательных аппаратов?',
+      options: [
+        { value: 'yes_dream', label: 'Да, это моя мечта' },
+        { value: 'yes_interesting', label: 'Да, было бы интересно' },
+        { value: 'prefer_existing', label: 'Предпочитаю работу с существующими' },
+        { value: 'no', label: 'Нет, не интересует' }
+      ]
+    },
+    {
+      id: 'opinion',
+      question: 'Ваше личное мнение о профессии авиастроителя',
+      options: [
+        { value: 'prestigious', label: 'Престижная и перспективная' },
+        { value: 'interesting', label: 'Интересная и творческая' },
+        { value: 'difficult', label: 'Сложная, но важная' },
+        { value: 'patriotic', label: 'Важна для страны' },
+        { value: 'neutral', label: 'Обычная профессия' }
       ]
     }
   ];
@@ -178,9 +221,17 @@ const Index = () => {
         <div className="container mx-auto max-w-3xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-secondary mb-4">Опрос для школьников и студентов</h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-600 mb-4">
               Помогите нам понять, как молодёжь относится к профессии авиастроителя
             </p>
+            <Button
+              onClick={() => window.location.href = '/stats'}
+              variant="outline"
+              className="mb-6"
+            >
+              <Icon name="BarChart3" size={20} className="mr-2" />
+              Посмотреть результаты опроса
+            </Button>
           </div>
 
           {!surveySubmitted ? (

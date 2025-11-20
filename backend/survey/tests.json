@@ -10,7 +10,11 @@
         "institution": "Школа №5",
         "interest": "very",
         "knowledge": "basic",
-        "career": "yes"
+        "career": "yes",
+        "fears": "difficulty",
+        "future_contribution": "engineer",
+        "innovation": "yes_dream",
+        "opinion": "prestigious"
       },
       "expectedStatus": 200,
       "expectedBody": {
