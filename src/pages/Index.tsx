@@ -385,6 +385,90 @@ const Index = () => {
         </div>
       </section>
 
+      <section id="companies" className="py-20 px-4 bg-gradient-to-b from-blue-50 to-white">
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold text-secondary mb-4 text-center">Где работать</h2>
+          <p className="text-center text-gray-600 mb-12 text-lg">
+            Ведущие авиастроительные предприятия Ульяновска
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <Card className="hover:shadow-xl transition-shadow border-primary/20">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Icon name="Factory" className="text-primary" />
+                  АО "Авиастар-СП"
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-3">
+                  Крупнейший производитель тяжелых транспортных самолётов Ил-76, Ту-204
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">Производство</span>
+                  <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Инженерия</span>
+                  <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded">Конструкторы</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-shadow border-primary/20">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Icon name="Settings" className="text-primary" />
+                  УКБП
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-3">
+                  Ульяновское конструкторское бюро приборостроения — разработка авиационных систем
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">Разработка</span>
+                  <span className="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded">Инновации</span>
+                  <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded">R&D</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-shadow border-primary/20">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Icon name="Wrench" className="text-primary" />
+                  УЗГА
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-3">
+                  Ульяновский завод гражданской авиации — ремонт и модернизация воздушных судов
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded">Ремонт</span>
+                  <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Модернизация</span>
+                  <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">Обслуживание</span>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="mt-12 max-w-3xl mx-auto">
+            <Card className="bg-gradient-to-r from-primary/10 to-accent/10 border-primary/30">
+              <CardContent className="pt-6">
+                <div className="flex items-start gap-4">
+                  <Icon name="Briefcase" size={32} className="text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="text-xl font-bold text-secondary mb-2">Карьерные возможности</h3>
+                    <p className="text-gray-600">
+                      После окончания учёбы в ИАТУ или УАвиаК-МЦК вы сможете устроиться на эти предприятия. 
+                      Ульяновск — один из крупнейших авиационных центров России с богатой историей и перспективным будущим.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center">
