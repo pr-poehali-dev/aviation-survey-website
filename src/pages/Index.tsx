@@ -144,7 +144,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-blue-50 relative">
       <div 
-        className="fixed inset-0 opacity-5 pointer-events-none z-0"
+        className="fixed inset-0 opacity-15 pointer-events-none z-0"
         style={{
           backgroundImage: 'url(https://cdn.poehali.dev/files/37aa808a-d022-409c-8ae5-d1b3387bd741.jpg)',
           backgroundSize: 'cover',
