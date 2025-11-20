@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
 import Icon from '@/components/ui/icon';
 import { toast } from 'sonner';
 
@@ -18,7 +19,7 @@ const Index = () => {
   };
 
   const handleSurveySubmit = async () => {
-    if (Object.keys(surveyAnswers).length < 3) {
+    if (Object.keys(surveyAnswers).length < 6) {
       toast.error('Пожалуйста, ответьте на все вопросы');
       return;
     }
@@ -42,6 +43,12 @@ const Index = () => {
       toast.error('Ошибка при отправке опроса');
     }
   };
+
+  const textFields = [
+    { id: 'name', label: 'Ваше имя', placeholder: 'Введите имя' },
+    { id: 'age', label: 'Ваш возраст', placeholder: 'Введите возраст', type: 'number' },
+    { id: 'institution', label: 'Место обучения', placeholder: 'Школа, колледж или вуз' }
+  ];
 
   const surveyQuestions = [
     {
@@ -179,10 +186,26 @@ const Index = () => {
           {!surveySubmitted ? (
             <Card className="shadow-lg">
               <CardContent className="pt-6 space-y-8">
+                {textFields.map((field, index) => (
+                  <div key={field.id} className="space-y-2">
+                    <Label className="text-lg font-semibold text-secondary">
+                      {index + 1}. {field.label}
+                    </Label>
+                    <Input
+                      type={field.type || 'text'}
+                      placeholder={field.placeholder}
+                      value={surveyAnswers[field.id] || ''}
+                      onChange={(e) =>
+                        setSurveyAnswers({ ...surveyAnswers, [field.id]: e.target.value })
+                      }
+                      className="text-base"
+                    />
+                  </div>
+                ))}
                 {surveyQuestions.map((question, index) => (
                   <div key={question.id} className="space-y-4">
                     <Label className="text-lg font-semibold text-secondary">
-                      {index + 1}. {question.question}
+                      {index + 4}. {question.question}
                     </Label>
                     <RadioGroup
                       value={surveyAnswers[question.id]}

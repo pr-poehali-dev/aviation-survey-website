@@ -6,7 +6,7 @@ from typing import Dict, Any
 def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     '''
     Business: Save survey responses from students about aviation career
-    Args: event - dict with httpMethod, body (interest, knowledge, career fields)
+    Args: event - dict with httpMethod, body (name, age, institution, interest, knowledge, career fields)
           context - object with request_id attribute
     Returns: HTTP response dict with statusCode, headers, body
     '''
@@ -35,11 +35,14 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
         }
     
     body_data = json.loads(event.get('body', '{}'))
+    name = body_data.get('name')
+    age = body_data.get('age')
+    institution = body_data.get('institution')
     interest = body_data.get('interest')
     knowledge = body_data.get('knowledge')
     career = body_data.get('career')
     
-    if not all([interest, knowledge, career]):
+    if not all([name, age, institution, interest, knowledge, career]):
         return {
             'statusCode': 400,
             'headers': {
@@ -55,8 +58,8 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     cur = conn.cursor()
     
     cur.execute(
-        "INSERT INTO survey_responses (interest, knowledge, career) VALUES (%s, %s, %s) RETURNING id",
-        (interest, knowledge, career)
+        "INSERT INTO survey_responses (name, age, institution, interest, knowledge, career) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id",
+        (name, int(age), institution, interest, knowledge, career)
     )
     
     response_id = cur.fetchone()[0]

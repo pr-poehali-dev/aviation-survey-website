@@ -1,10 +1,13 @@
 {
   "tests": [
     {
-      "name": "Save survey response",
+      "name": "Save survey response with all fields",
       "method": "POST",
       "path": "/",
       "body": {
+        "name": "Иван Иванов",
+        "age": "16",
+        "institution": "Школа №5",
         "interest": "very",
         "knowledge": "basic",
         "career": "yes"
@@ -20,6 +23,7 @@
       "method": "POST",
       "path": "/",
       "body": {
+        "name": "Иван",
         "interest": "very"
       },
       "expectedStatus": 400,
