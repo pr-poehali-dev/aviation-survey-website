@@ -155,8 +155,7 @@ const Index = () => {
                 { id: 'home', label: 'Главная' },
                 { id: 'survey', label: 'Опрос' },
                 { id: 'profession', label: 'О профессии' },
-                { id: 'education', label: 'Где учиться' },
-                { id: 'contact', label: 'Контакты' }
+                { id: 'education', label: 'Где учиться' }
               ].map((item) => (
                 <button
                   key={item.id}
@@ -204,14 +203,10 @@ const Index = () => {
             </div>
             <div className="relative animate-fade-in">
               <img
-                src="https://cdn.poehali.dev/projects/95931694-5656-4801-8df2-de8d83b40145/files/6311d96c-3c3f-45af-9e5c-5a84de1a5073.jpg"
+                src="https://cdn.poehali.dev/files/37aa808a-d022-409c-8ae5-d1b3387bd741.jpg"
                 alt="Ил-76"
                 className="rounded-2xl shadow-2xl"
               />
-              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg">
-                <div className="text-4xl font-bold text-primary">Ил-76</div>
-                <div className="text-sm text-gray-600">Легендарный транспортник</div>
-              </div>
             </div>
           </div>
         </div>
@@ -390,7 +385,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contact" className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center">
             <h2 className="text-4xl font-bold text-secondary mb-8">Поделитесь этим сайтом</h2>
@@ -404,35 +399,6 @@ const Index = () => {
                 className="w-64 h-64 mx-auto"
               />
               <p className="mt-4 text-sm text-gray-500">Наведите камеру для перехода на сайт</p>
-            </div>
-            <div className="mt-12 grid md:grid-cols-3 gap-6">
-              <Card>
-                <CardHeader>
-                  <Icon name="Mail" className="mx-auto text-primary" size={32} />
-                  <CardTitle className="text-lg">Email</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">info@aviacareer.ru</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <Icon name="Phone" className="mx-auto text-primary" size={32} />
-                  <CardTitle className="text-lg">Телефон</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">+7 (495) 123-45-67</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <Icon name="MapPin" className="mx-auto text-primary" size={32} />
-                  <CardTitle className="text-lg">Адрес</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">Москва, Россия</p>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>
