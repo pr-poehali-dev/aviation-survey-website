@@ -396,17 +396,17 @@ const Index = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Icon name="Factory" className="text-primary" />
-                  АО "Авиастар-СП"
+                  Филиал ПАО «Ил» - Авиастар
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-3">
-                  Крупнейший производитель тяжелых транспортных самолётов Ил-76, Ту-204
+                  Крупнейшее предприятие России по выпуску авиационной техники. Предприятие осуществляет гарантийное и послегарантийное обслуживание авиационной техники.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">Производство</span>
-                  <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Инженерия</span>
-                  <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded">Конструкторы</span>
+                  <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Обслуживание</span>
+                  <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded">Инженерия</span>
                 </div>
               </CardContent>
             </Card>
